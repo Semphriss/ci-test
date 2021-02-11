@@ -1,0 +1,10 @@
+name: test
+on:
+  push: []
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Test
+        run: where vcpkg
