@@ -7,4 +7,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Test
+        shell: cmd
         run: where vcpkg
