@@ -1,11 +1,20 @@
 name: test
-on:
-  push: []
+on: [push]
 
 jobs:
   test:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        A: [AA, AB, AC]
+        B: [BA, BB, BC]
+        exclude:
+         - A: AA
+           B: [BA, BC]
+
+    runs-on: ubuntu-latest
     steps:
       - name: Test
-        shell: cmd
-        run: where vcpkg
+        env:
+          A: ${{ matrix.A }}
+          B: ${{ matrix.B }}
+        run: echo $A $B
