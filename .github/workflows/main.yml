@@ -10,6 +10,10 @@ jobs:
         exclude:
          - A: AA
            B: [BA, BC]
+         - A: AB
+           B: BB
+         - A: AB
+           B: BC
 
     runs-on: ubuntu-latest
     steps:
